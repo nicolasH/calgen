@@ -8,6 +8,12 @@ def month(a):
 
     return bulans[a-1]
 
+
+def isHoliday(day):
+    return day >= holiday_start and day < holiday_end
+
+    
+
 days = 90
 
 now = date.today()
@@ -19,6 +25,9 @@ sepID = ["------", "------","------","------","------","------","------"]
 sepID = ["______","______","______","______","______","______","______"]
 sepID = ["======","======","======","======","======","======","======"]
 print(" | ".join(daysFR))
+
+holiday_start = date(2025,7,5)
+holiday_end = date(2025,9,1)
 
 start = date.today() - timedelta(days= date.today().weekday())
 print(start)
@@ -58,7 +67,8 @@ for n in range(0, weeks*7):
         day = str(day)
         line.append(day)
         dayC = ["day"]
-
+        if isHoliday(today):
+            dayC.append("holiday")
         dayC.append("dow"+str(today.weekday()))
         dayC.append("mn"+str(today.month))
         if not today.month == yesterday.month:

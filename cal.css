@@ -20,7 +20,7 @@ th{
 .day{
     text-align: right;
     vertical-align: top;
-    width: 80px;
+    width: 84px;
     height: 70px;
 
 }
@@ -50,12 +50,14 @@ th{
     border-left: solid black 3px;
     border-top: solid black 3px
 }
+
+
 .dow5, .dow6 {
     filter: brightness(90%);
 }
 
 .mn1, .mn3, .mn5, .mn7, .mn9, .mn11{
-    background: lightblue
+    background: lightblue;
 }
 
 .mn2, .mn4, .mn6, .mn8, .mn10, .mn12{
@@ -64,3 +66,8 @@ th{
 
 
 
+.holiday {
+    background-image: repeating-linear-gradient(-45deg, #AAAAAA 0, #AAAAAA 1px, transparent 0, transparent 5px);
+
+}
+ 

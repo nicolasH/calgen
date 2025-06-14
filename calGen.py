@@ -1,8 +1,8 @@
 # This is a sample Python script.
-import reportlab
-from macholib.mach_o import nlist
-from reportlab.lib import colors
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+#import reportlab
+#from macholib.mach_o import nlist
+#from reportlab.lib import colors
+#from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 import calendar
 from datetime import date, timedelta
 import sys
