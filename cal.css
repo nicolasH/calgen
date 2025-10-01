@@ -6,28 +6,64 @@ table{
     border: solid black 3px;
     border-collapse: collapse;
 }
+
 td{
     border: solid gray 1px;
     padding:10px
 }
 
+
 th{
     border: solid black 3px;
     padding: 7px;
     background: lightgray;
+
 }
+
+
+
 
 .day{
     text-align: right;
     vertical-align: top;
-    width: 84px;
-    height: 70px;
+    width: 88px;
+    height: 72px;
 
 }
+/* .day span{ */
+/*     position: absolute; */
+/*     display:block; */
+/*     z-index: 2; */
+/*     float:right; */
+/*     padding-left: 51; */
+/*     margin-top:-2; */
+    
+/* } */
+
+
+span.week_num{
+    display:block;
+    position:relative;
+    z-index: 1;
+    float:left;
+    margin-top:7;
+    text-align:left;
+    font-size:40;
+    font-style: italic;
+    filter: brightness(20%);
+    color: #aaa4;
+    padding:0;
+    padding-top:10;
+    margin-bottom:-10;
+    margin-right:0;
+    margin-left:0;
+    padding-left:0;
+}
+
 .month{
     border: solid black 3px;
     width: 20px;
-    filter: brightness(80%);
+    filter: brightness(90%);
 }
 
 .left, .right{
@@ -46,6 +82,7 @@ th{
 .lastWeek{
     border-bottom: solid black 3px
 }
+
 .firstDay{
     border-left: solid black 3px;
     border-top: solid black 3px
@@ -57,17 +94,34 @@ th{
 }
 
 .mn1, .mn3, .mn5, .mn7, .mn9, .mn11{
-    background: lightblue;
+    background: #d8ecf3;
 }
 
 .mn2, .mn4, .mn6, .mn8, .mn10, .mn12{
-    background: lightgreen
-}
+    background: #a6f1a6;
 
+}
 
 
 .holiday {
-    background-image: repeating-linear-gradient(-45deg, #AAAAAA 0, #AAAAAA 1px, transparent 0, transparent 5px);
+    background-image: 
+        /*repeating-linear-gradient(-45deg, #1A8FE5 0, #1A8FE5 0.5px, transparent 0, transparent 9px);*/
+  repeating-linear-gradient(
+  45deg,
+  rgba(0, 0, 0, 0.2),
+  rgba(0, 0, 0, 0.2) 13px,
+  rgba(0, 0, 0, 0.3) 13px,
+  rgba(0, 0, 0, 0.3) 26px)
+;
 
+    /*background-size: 30px 30px;*/
+/*    background-color: #E4E4ED;*/
 }
- 
+/*.holiday {
+    background-image: repeating-linear-gradient(-45deg, rgb(170, 170, 170) 0px, rgb(170, 170, 170) 1px, transparent 0px, transparent 5px)*/
+}
+/*
+.holiday {
+    background-image: repeating-linear-gradient(-45deg, gray 0, gray 1px, transparent 0, transparent 6px);
+}
+ */

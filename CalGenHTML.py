@@ -5,12 +5,16 @@ import traceback
 
 def month(a):
     bulans = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember","[]"]
+    bulans = ["Jan.", "Feb.", "Mar.", "April", "Mei", "Juni", "Juli", "Agus.", "Sept.", "Okto.", "Nov.", "Des.","[]"]
 
     return bulans[a-1]
 
 
 def isHoliday(day):
-    return day >= holiday_start and day < holiday_end
+    for holiday_start, holiday_end in holidays:
+        if day >= holiday_start and day < holiday_end:
+            return True
+    return False
 
     
 
@@ -26,8 +30,13 @@ sepID = ["______","______","______","______","______","______","______"]
 sepID = ["======","======","======","======","======","======","======"]
 print(" | ".join(daysFR))
 
-holiday_start = date(2025,7,5)
-holiday_end = date(2025,9,1)
+holidays = [(date(2025,10,18), date(2025,11,3)), 
+            (date(2025,12,20), date(2026,1,5)),
+            (date(2026,2,7), date(2026,2,23)),
+            (date(2026,4,4), date(2026,4,20))]
+            
+holiday_start = date(2025,10,18)
+holiday_end = date(2025,11,3)
 
 start = date.today() - timedelta(days= date.today().weekday())
 print(start)
@@ -55,6 +64,7 @@ zzz = 0
 zzMonth = ""
 
 weeks=14
+week_nums = []
 for n in range(0, weeks*7):
     aaaa.append(str(n))
     try:
@@ -63,9 +73,15 @@ for n in range(0, weeks*7):
         todayClasses = "day"
 
         day = today.day
-
+        week = today.isocalendar().week
+        #print(today, week)
         day = str(day)
         line.append(day)
+        if len(line) % 7 == 0 :
+        
+            week_nums.append(week)
+
+    
         dayC = ["day"]
         if isHoliday(today):
             dayC.append("holiday")
@@ -75,7 +91,7 @@ for n in range(0, weeks*7):
             dayC.append("firstDay")
         if today.month != nextLineDay.month:
             dayC.append("lastWeek")
-        lineC.append(" ".join(dayC))
+        lineC.append(" ".join(dayC ))
 
         if len(line) == 7:
             # end of week line
@@ -114,6 +130,7 @@ for n in range(0, weeks*7):
     except Exception as ex:
         print(traceback.format_exc())
 
+print("week nums: ", week_nums)
 print("|==" + "==|==".join(sepID) + "==|")
 print(colMonthA)
 print("------")
@@ -136,7 +153,11 @@ with open("cal.html", 'w') as cal:
         for n in range(1, 8):
             # print(n)
             # print(f"{row} - {classes[row]}  - {n}")
-            cell = f"<td class=\"{classes[row][n]}\"><span>{line[n]}</span></td>"
+            cell = ""
+            if n == 1:
+                cell = f"<td class=\"{classes[row][n]}\"><span class=\"week_num\">{week_nums[row]}</span><span>{line[n]}</span></td>"
+            else:
+                cell = f"<td class=\"{classes[row][n]}\"><span>{line[n]}</span></td>"
             rowCells.append(cell)
 
         print("".join(rowCells), file=cal)
