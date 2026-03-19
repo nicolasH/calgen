@@ -5,6 +5,15 @@ body{
 table{
     border: solid black 3px;
     border-collapse: collapse;
+    background-image: 
+  repeating-linear-gradient(
+  45deg,
+  rgba(0, 0, 0, 0.1),
+  rgba(0, 0, 0, 0.1) 13px,
+  rgba(0, 0, 0, 0.4) 13px,
+  rgba(0, 0, 0, 0.4) 26px)
+;
+
 }
 
 td{
@@ -28,7 +37,7 @@ th{
     vertical-align: top;
     width: 88px;
     height: 72px;
-
+;
 }
 /* .day span{ */
 /*     position: absolute; */
@@ -88,10 +97,25 @@ span.week_num{
     border-top: solid black 3px
 }
 
-
 .dow5, .dow6 {
     filter: brightness(90%);
 }
+
+.holiday {
+filter: opacity(75%);
+/*     background-image:  */
+/*   repeating-linear-gradient( */
+/*   45deg, */
+/*   rgba(0, 0, 0, 0.2), */
+/*   rgba(0, 0, 0, 0.2) 13px, */
+/*   rgba(0, 0, 0, 0.3) 13px, */
+/*   rgba(0, 0, 0, 0.3) 26px) */
+/* ; */
+
+    /*background-size: 30px 30px;*/
+/*    background-color: #E4E4ED;*/
+}
+
 
 .mn1, .mn3, .mn5, .mn7, .mn9, .mn11{
     background: #d8ecf3;
@@ -103,23 +127,9 @@ span.week_num{
 }
 
 
-.holiday {
-    background-image: 
-        /*repeating-linear-gradient(-45deg, #1A8FE5 0, #1A8FE5 0.5px, transparent 0, transparent 9px);*/
-  repeating-linear-gradient(
-  45deg,
-  rgba(0, 0, 0, 0.2),
-  rgba(0, 0, 0, 0.2) 13px,
-  rgba(0, 0, 0, 0.3) 13px,
-  rgba(0, 0, 0, 0.3) 26px)
-;
-
-    /*background-size: 30px 30px;*/
-/*    background-color: #E4E4ED;*/
-}
 /*.holiday {
     background-image: repeating-linear-gradient(-45deg, rgb(170, 170, 170) 0px, rgb(170, 170, 170) 1px, transparent 0px, transparent 5px)*/
-}
+
 /*
 .holiday {
     background-image: repeating-linear-gradient(-45deg, gray 0, gray 1px, transparent 0, transparent 6px);
