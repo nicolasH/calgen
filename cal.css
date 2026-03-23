@@ -101,6 +101,7 @@ span.week_num{
     filter: brightness(90%);
 }
 
+
 .holiday {
 filter: opacity(75%);
 /*     background-image:  */
@@ -111,18 +112,22 @@ filter: opacity(75%);
 /*   rgba(0, 0, 0, 0.3) 13px, */
 /*   rgba(0, 0, 0, 0.3) 26px) */
 /* ; */
-
-    /*background-size: 30px 30px;*/
+/*background-size: 30px 30px;*/
 /*    background-color: #E4E4ED;*/
+}
+
+.holiday.dow5, .holiday.dow6 {
+    mix-blend-mode: plus-darker;
+    
 }
 
 
 .mn1, .mn3, .mn5, .mn7, .mn9, .mn11{
-    background: #d8ecf3;
+    background: #e1f0f6; /* #d8ecf3;*/
 }
 
 .mn2, .mn4, .mn6, .mn8, .mn10, .mn12{
-    background: #a6f1a6;
+    background: #baf4ba; /*#a6f1a6;*/
 
 }
 
